@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	
+	<ui:define name="menu">
+    <ul class="nav">
+      <li class="active"><a href="bootstrap.jsf"><i class="icon-star-empty"></i> Strona główna</a></li>
+      <li><a href="add_new.jsf"><i class="icon-plus"></i> Dodaj film</a></li>
+      <li><a href="list_movies.jsf"><i class="icon-list"></i> Lista filmów</a></li>
+    </ul>
+	</ui:define>
+	
+	<ui:define name="content">
+	
+		<div class="hero-unit">
+			<h2>Panel Administracyjny</h2>
+			<br />
+			<p>Aplikacja umożliwia zarządzanie spisem filmów.</p>
+			<p>To pierwsza na świecie wirtualna filmoteka !</p>
+		</div>
+	</ui:define>
+</ui:composition>

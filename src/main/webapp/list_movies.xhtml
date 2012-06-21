@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+	
+	<ui:define name="menu">
+    <ul class="nav">
+      <li><a href="bootstrap.jsf"><i class="icon-star-empty"></i> Strona główna</a></li>
+      <li><a href="add_new.jsf"><i class="icon-plus"></i> Dodaj film</a></li>
+      <li class="active"><a href="list_movies.jsf"><i class="icon-list"></i> Lista filmów</a></li>
+    </ul>
+	</ui:define>
+	
+	<ui:define name="content">
+	
+		<div class="hero-unit">
+			<h2>Lista filmów:</h2>
+			<br />
+			<h:form>
+			<h:dataTable id="dataTable" var="_movie" value="#{movieBean.allMovies}"
+				styleClass="table table-striped table-bordered">
+				<h:column>
+					<f:facet name="header">Id</f:facet>
+                #{_movie.id}
+            </h:column>
+			<h:column>
+					<f:facet name="header">Tytuł</f:facet>
+                #{_movie.title}
+            </h:column>
+			<h:column>
+					<f:facet name="header">Reżyser</f:facet>
+                #{_movie.director}
+            </h:column>
+
+			<h:column>
+				<f:facet name="header">Data produkcji</f:facet>
+                #{_movie.dateOfProduction}
+            </h:column>
+			<h:column>
+				<f:facet name="header">Czynność</f:facet>
+				<h:commandLink value="usuń" action="#{movieBean.deleteMovie}" />
+			</h:column>
+			</h:dataTable>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

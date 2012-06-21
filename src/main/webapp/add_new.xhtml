@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich">
+	
+	<ui:define name="menu">
+    <ul class="nav">
+      <li><a href="bootstrap.jsf"><i class="icon-star-empty"></i> Strona główna</a></li>
+      <li class="active"><a href="add_new.jsf"><i class="icon-plus"></i> Dodaj film</a></li>
+      <li><a href="list_movies.jsf"><i class="icon-list"></i> Lista filmów</a></li>
+    </ul>
+	</ui:define>
+	
+	<ui:define name="content">
+	
+		<div class="hero-unit">
+			<h2>Dodawanie film</h2>
+			<br />
+			<p>W celu dodania nowego filmu do bilbioteki należy wypełnić pola formularza.</p>
+			
+			<br />
+
+
+	
+		<h:form id="movieForm" styleClass="form-horizontal">
+		<fieldset>
+			<div class="control-group #{!movieTitle.valid ? 'error' : ''}">
+				<h:outputLabel for="movieTitle" value="Tytuł:"
+					styleClass="control-label" />
+				<div class="controls">
+					<h:inputText id="movieTitle" value="#{movieBean.movie.title}"
+						binding="#{movieTitle}" required="#{true}" />
+					<h:message for="movieTitle" errorClass="help-inline" />
+				</div>
+			</div>
+			
+			<div class="control-group #{!directorName.valid ? 'error' : ''}">
+				<h:outputLabel for="directorName" value="Reżyser:"
+					styleClass="control-label" />
+				<div class="controls">
+					<h:inputText id="directorName" value="#{movieBean.movie.director}"
+						binding="#{directorName}" required="#{true}"/>
+					<h:message for="directorName" errorClass="help-inline" />
+				</div>
+			</div>
+
+			<div class="control-group #{!dateOfProduction.valid ? 'error' : ''}">
+				<h:outputLabel for="dateOfProduction" value="Data produkcji:"
+					styleClass="control-label" />
+				<div class="controls">
+					<rich:calendar value="#{movieBean.movie.dateOfProduction}"
+						id="dateOfProduction" binding="#{dateOfProduction}" datePattern="dd.MM.yyyy" showApplyButton="#{false}"
+						cellWidth="24px" cellHeight="22px" style="width:200px" required="#{true}">
+						<a4j:ajax render="messages" execute="@this" />
+					</rich:calendar>
+				</div>
+			</div>
+			
+			<div class="form-actions">
+				<h:commandButton id="register"
+					action="#{movieBean.addMovie}" value="Dodaj film"
+					styleClass="btn" />
+			</div>
+		</fieldset>
+		</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
