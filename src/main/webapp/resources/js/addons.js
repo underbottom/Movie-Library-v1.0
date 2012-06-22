@@ -12,3 +12,7 @@ function preview_error() {
 	$('#img_preview img').attr('src', 'http://upload.wikimedia.org/wikipedia/en/d/d6/Preview_icon.png');
 	clearTimeout(timer);
 }
+
+function set_default_img(elem) {
+	elem.attr('src', 'http://upload.wikimedia.org/wikipedia/en/d/d6/Preview_icon.png');
+}

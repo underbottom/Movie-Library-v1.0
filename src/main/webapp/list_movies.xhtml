@@ -43,7 +43,7 @@
             
 			<h:column>
 				<f:facet name="header">Okładka DVD</f:facet>
-                <img src="#{_movie.coverUrl}" style="max-width: 100px;" />
+                <img onerror="set_default_img($(this))" src="#{_movie.coverUrl}" style="max-width: 100px;" />
             </h:column>
 			<h:column>
 				<f:facet name="header">Czynność</f:facet>
