@@ -4982,3 +4982,8 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+#img_preview {
+	float: left;
+	margin: 0 0 0 50px;
+	height: 100px;
+}

@@ -21,6 +21,7 @@ public class Movie {
 	private Date dateOfProduction = new Date();
 	private String title;
 	private String director;
+	private String coverUrl;
 
 	@Temporal(TemporalType.DATE)
 	public Date getDateOfProduction() {
@@ -55,5 +56,13 @@ public class Movie {
 
 	public void setId(Long movieId) {
 		this.Id = movieId;
+	}
+
+	public String getCoverUrl() {
+		return coverUrl;
+	}
+
+	public void setCoverUrl(String coverUrl) {
+		this.coverUrl = coverUrl;
 	}
 }

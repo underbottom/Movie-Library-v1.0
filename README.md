@@ -6,6 +6,14 @@ Autor: s8140
 
 W oparciu o: https://github.com/KubaNeumann/jeedemo
 
+## Technologie
+
+* Java EE 6
+* JSF + RichFaces
+* Hibernate
+* jQuery
+* Twitter Bootstrap
+
 ## Główny ekran aplikacji
 <img src="https://github.com/underbottom/Movie-Library-v1.0/raw/master/docs/main.png" />
 

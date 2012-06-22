@@ -18,7 +18,7 @@
 	<ui:define name="content">
 	
 		<div class="hero-unit">
-			<h2>Dodawanie film</h2>
+			<h2>Dodawanie nowego filmu</h2>
 			<br />
 			<p>W celu dodania nowego filmu do bilbioteki należy wypełnić pola formularza.</p>
 			
@@ -45,6 +45,17 @@
 					<h:inputText id="directorName" value="#{movieBean.movie.director}"
 						binding="#{directorName}" required="#{true}"/>
 					<h:message for="directorName" errorClass="help-inline" />
+				</div>
+			</div>
+			
+			<div class="control-group #{!coverUrl.valid ? 'error' : ''}">
+				<h:outputLabel for="coverUrl" value="Adres URL do okładki:"
+					styleClass="control-label" />
+				<div class="controls">
+					<h:inputText id="coverUrl" value="#{movieBean.movie.coverUrl}"
+						binding="#{coverUrl}" required="#{true}" onchange="generate_preview();" style="float: left;" />
+					<h:message for="coverUrl" errorClass="help-inline" />
+					<div id="img_preview"><img onerror="preview_error()" src="http://upload.wikimedia.org/wikipedia/en/d/d6/Preview_icon.png" width="100px" height="100px" /></div>
 				</div>
 			</div>
 
