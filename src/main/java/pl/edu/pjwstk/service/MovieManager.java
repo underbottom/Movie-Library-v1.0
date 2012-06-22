@@ -1,4 +1,4 @@
-package com.example.jeedemo.service;
+package pl.edu.pjwstk.service;
 
 import java.util.List;
 
@@ -6,7 +6,8 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import com.example.jeedemo.domain.Movie;
+import pl.edu.pjwstk.domain.Movie;
+
 
 @Stateless
 public class MovieManager {

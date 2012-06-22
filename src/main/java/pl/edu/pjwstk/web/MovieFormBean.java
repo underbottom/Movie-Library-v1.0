@@ -1,4 +1,4 @@
-package com.example.jeedemo.web;
+package pl.edu.pjwstk.web;
 
 import java.io.Serializable;
 
@@ -8,8 +8,9 @@ import javax.inject.Named;
 
 import javax.inject.Inject;
 
-import com.example.jeedemo.domain.Movie;
-import com.example.jeedemo.service.MovieManager;
+import pl.edu.pjwstk.domain.Movie;
+import pl.edu.pjwstk.service.MovieManager;
+
 
 @SessionScoped
 @Named("movieBean")

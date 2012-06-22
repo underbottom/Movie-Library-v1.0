@@ -1,4 +1,4 @@
-package com.example.jeedemo.domain;
+package pl.edu.pjwstk.domain;
 
 import java.util.Date;
 import javax.persistence.Entity;

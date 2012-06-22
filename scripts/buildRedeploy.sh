@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rm -rf ./target/*
 echo "************ UNDEPLOYING *******************"
 asadmin undeploy MovieLibraryPro
 echo "************ BUILDING **********************"
